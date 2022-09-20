@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p>Проверить ip-адрес</p>
+	<input type="text" id="ip">
+	<input type="button" onclick="ip_regexp()" value="Проверить">
+	<p id="done"></p>
+	<script type="text/javascript">
+		function ip_regexp()
+		{
+			var str = document.getElementById("ip");
+			str = str.value;
+			var regexp = /\b((([1-9])|([1-9][0-9])|(1\d\d)|(2[0-5][0-5]))\.(\d|([1-9][0-9])|(1\d\d)|(2[0-5][0-5]))\.(\d|([1-9][0-9])|(1\d\d)|(2[0-5][0-5]))\.((2[0-5][0-5])|(1\d\d)|([1-9][0-9])|\d))\b/;
+			if(regexp.test(str))
+			{
+				var result = str.match(regexp);
+				done.innerHTML = result[0];
+
+			}
+			else
+			{
+				alert("IP-адрес не найден");
+			}
+		}
+	</script>
+</body>
+</html>
